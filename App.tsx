@@ -1,20 +1,41 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import * as SplashScreen from 'expo-splash-screen';
+import { ThemeProvider } from 'styled-components';
+
+import theme from './src/global/styles/theme';
+
+import { Splash } from './src/screens/Splash'
+import { SignIn } from './src/screens/SignIn';
+
+import {
+  useFonts,
+  DMSans_400Regular
+} from '@expo-google-fonts/dm-sans';
+
+import {
+  DMSerifDisplay_400Regular,
+} from '@expo-google-fonts/dm-serif-display';
+
+import {
+  Inter_500Medium
+} from '@expo-google-fonts/inter';
+
+SplashScreen.preventAutoHideAsync();
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    DMSerifDisplay_400Regular,
+    DMSans_400Regular,
+    Inter_500Medium
+  })
+  if(!fontsLoaded) return null;
+
+  SplashScreen.hideAsync();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ThemeProvider theme={theme}>
+      {/* <Splash /> */}
+      <SignIn />
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
