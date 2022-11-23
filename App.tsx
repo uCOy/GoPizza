@@ -6,6 +6,7 @@ import theme from './src/global/styles/theme';
 
 import { Splash } from './src/screens/Splash'
 import { SignIn } from './src/screens/SignIn';
+import { Resquest } from './src/screens/Request';
 
 import {
   useFonts,
@@ -35,7 +36,7 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       {/* <Splash /> */}
-      <SignIn />
+      <Resquest />
     </ThemeProvider>
   );
 }
