@@ -8,6 +8,6 @@ export const CheckBox = styled.View`
 
 `;
 
-export const Text = styled.View`
+export const Text = styled.Text`
 
 `;

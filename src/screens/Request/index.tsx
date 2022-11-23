@@ -1,5 +1,5 @@
 import React from 'react';
-import { TransactionTypeButton } from '../../components/SelectPizza';
+import { SelectPizza } from '../../components/SelectPizza';
 
 import { 
   Container,
@@ -33,13 +33,7 @@ export function Resquest(){
           Selecione um tamanho
         </SubText>
       </Div>
-      <TransactionTypeButton 
-                title="Income"
-                type="up"
-                onPress={() => handleTransactionsTypeSelect("positive")}
-                isActive={transactionType === "positive"}
-      />
-
+      <SelectPizza text="Demonio"/>
     </Container>
   )
 }
