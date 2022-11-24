@@ -3,6 +3,9 @@ import styled from "styled-components/native";
 import { LinearGradient } from 'expo-linear-gradient'
 import { TextInput } from 'react-native';
 
+interface StylesProps{
+  type: 'login' | 'request';
+}
 
 // export const Container = styled(LinearGradient).attrs({
 //   colors: ["#B83341", "#E03F50"],
@@ -17,17 +20,23 @@ import { TextInput } from 'react-native';
 
 export const Container = styled(TextInput).attrs(({theme}) => ({
   placeholderTextColor: theme.COLORS.SHAPE,
-}))`
-  width: 100%;
+}))<StylesProps>`
+  /* width: 100%; */
+  width: ${({ theme, type }) => type === 'request' ? theme.WIDTH.INPUT : theme.WIDTH.INPUT_200};
   font-family: ${ ( {theme} ) => theme.FONTS.TEXT};
   font-size: ${RFValue(14)}px;
-  background-color: ${( {theme} ) => theme.COLORS.PRIMARY_900};
 
-  color: ${({theme}) => theme.COLORS.TITLE};
+  background-color: ${({ theme, type }) =>
+  type === 'request' ? theme.COLORS.TITLE : theme.COLORS.PRIMARY_900};
+  /* background-color: ${( {theme} ) => theme.COLORS.PRIMARY_900}; */
+
+  color: ${({theme}) => theme.COLORS.SECONDARY_900};
   padding: 20px 21px;
   border: 1px ${({theme}) => theme.COLORS.SHAPE};
   border-radius: 12px;
-  margin-top: 23px;
+  /* margin-top: 23px; */
+  margin-top: ${({ theme, type }) =>
+  type === 'request' ? theme.MARGIN.AREA_0 : theme.MARGIN.AREA_23 };
   justify-content: center;
   border-radius: 12px;
 `;

@@ -21,16 +21,18 @@ export function SignIn(){
       <LoginInputs>
         <Title>Login</Title>
         <InputSignIn 
+          type="login"
           placeholder="E-mail"
         />
         <InputSignIn 
+          type="login"
           placeholder="Senha"
         />
       </LoginInputs>
       <Footer>
         <Text>Esqueci minha senha</Text>
       </Footer>
-      <ButtonSignIn title='Entrar'/>
+      <ButtonSignIn type='login' title='Entrar'/>
     </Container>
   )
 }

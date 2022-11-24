@@ -29,4 +29,15 @@ export default {
     TEXT: 'DMSans_400Regular',
     SUBTEXT: 'Inter_500Medium'
   },
+
+  WIDTH: {
+    INPUT: '183px',
+    INPUT_200: '100%',
+  },
+
+  MARGIN: {
+    AREA_23: '23px',
+    AREA_20: '20px',
+    AREA_0: '0px'
+  },
 };

@@ -4,11 +4,11 @@ import {
 } from './styles';
 
 interface Props{
-  
+  type: 'login' | 'request';
 }
 
-export function InputSignIn({...rest} : Props) {
+export function InputSignIn({ type, ...rest} : Props) {
   return(
-    <Container {...rest} />
+    <Container type={type} {...rest} />
   )
 }

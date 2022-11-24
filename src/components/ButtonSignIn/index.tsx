@@ -8,11 +8,12 @@ import {
 
 interface Props extends TouchableOpacityProps{
   title: string
+  type: 'login' | 'request';
 }
 
-export function ButtonSignIn({title, ...rest}:Props) {
+export function ButtonSignIn({type, title, ...rest}:Props) {
   return (
-    <Container {...rest}>
+    <Container type={type} {...rest}>
       <Title>
         {title}
       </Title>
