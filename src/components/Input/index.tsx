@@ -7,7 +7,7 @@ interface Props{
   type: 'login' | 'request';
 }
 
-export function InputSignIn({ type, ...rest} : Props) {
+export function Input({ type, ...rest} : Props) {
   return(
     <Container type={type} {...rest} />
   )

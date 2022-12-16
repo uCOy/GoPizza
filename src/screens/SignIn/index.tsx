@@ -1,6 +1,7 @@
 import React from 'react';
-import { InputSignIn } from '../../components/InputSignIn';
-import { ButtonSignIn } from '../../components/ButtonSignIn';
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
+import { useNavigation } from "@react-navigation/native";
 
 import { 
   Container,
@@ -13,6 +14,9 @@ import {
 } from './styles';
 
 export function SignIn(){
+
+  const navigation = useNavigation();
+
   return(
     <Container>
       <Header>
@@ -20,11 +24,11 @@ export function SignIn(){
       </Header>
       <LoginInputs>
         <Title>Login</Title>
-        <InputSignIn 
+        <Input 
           type="login"
           placeholder="E-mail"
         />
-        <InputSignIn 
+        <Input 
           type="login"
           placeholder="Senha"
         />
@@ -32,7 +36,7 @@ export function SignIn(){
       <Footer>
         <Text>Esqueci minha senha</Text>
       </Footer>
-      <ButtonSignIn type='login' title='Entrar'/>
+      <Button type='login' title='Entrar'/>
     </Container>
   )
 }

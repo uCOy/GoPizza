@@ -4,9 +4,11 @@ import { ThemeProvider } from 'styled-components';
 
 import theme from './src/global/styles/theme';
 
-import { Splash } from './src/screens/Splash'
-import { SignIn } from './src/screens/SignIn';
-import { Resquest } from './src/screens/Request';
+import { Splash } from "./src/Screens/Splash";
+import { SignIn } from "./src/Screens/SignIn";
+import { Request } from "./src/screens/Request";
+
+import { Routes } from './src/routes';
 
 import {
   useFonts,
@@ -35,8 +37,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      {/* <Splash /> */}
-      <Resquest />
+      <Routes/>
     </ThemeProvider>
   );
 }

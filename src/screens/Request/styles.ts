@@ -9,10 +9,10 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-  padding: 70px 20px;
+  padding: 50px 20px;
   width: 100%;
   background-color: ${( {theme} ) => theme.COLORS.PRIMARY_900};
-  height: ${RFPercentage(30)}px;
+  height: ${RFPercentage(27)}px;
 `;
 
 
@@ -34,12 +34,12 @@ export const Icon = styled(Feather)`
 export const ImageCentralizer = styled.View`
   align-items: center;
   justify-content: center;
-  margin-left: ${RFValue(20)}px;
+  margin-left: ${RFValue(15)}px;
 `;
 
 export const PizzaImage = styled.Image`
-  width: 380px;
-  height: 380px;
+  width: ${RFValue(250)}px;
+  height: ${RFValue(250)}px;
 
   position: absolute;
 `;

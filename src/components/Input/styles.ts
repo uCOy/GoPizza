@@ -30,7 +30,8 @@ export const Container = styled(TextInput).attrs(({theme}) => ({
   type === 'request' ? theme.COLORS.TITLE : theme.COLORS.PRIMARY_900};
   /* background-color: ${( {theme} ) => theme.COLORS.PRIMARY_900}; */
 
-  color: ${({theme}) => theme.COLORS.SECONDARY_900};
+  color: ${({ theme, type }) =>
+  type === 'request' ? theme.COLORS.SECONDARY_900 : theme.COLORS.TITLE};
   padding: 20px 21px;
   border: 1px ${({theme}) => theme.COLORS.SHAPE};
   border-radius: 12px;

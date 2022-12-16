@@ -10,7 +10,7 @@ interface PizzaProps{
 
 export const Container = styled(TouchableOpacity)<PizzaProps>`
   background-color: ${({theme}) => theme.COLORS.BACKGROUND};
-  width: 124px;
+  width: 114px;
   height: 102px;
   justify-content: center;
   border: 1px solid ${({theme}) => theme.COLORS.SHAPE};

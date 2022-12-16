@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import { SelectRequest } from '../../components/SelectRequest';
-import { InputSignIn } from '../../components/InputSignIn';
-import { ButtonSignIn } from '../../components/ButtonSignIn';
+import { Input } from '../../components/Input';
+import { Button } from '../../components/Button';
+import { ReturnSignInButton } from '../../components/ReturnSignInButton';
 
 import { 
   Container,
   Header,
-  Icon,
   PizzaImage,
   ImageCentralizer,
-  MiniHeader,
   TitleBlock,
   Title,
   SubText,
@@ -22,14 +21,7 @@ import {
   TextConfirmBody,
 } from './styles';
 
-interface Props {
-  name: 'circle' | 'disc';
-}
-
-
-export function Resquest({
-  name,
-} : Props){
+export function Request(){
 
   const [ActiveStart, setActiveStart] = useState("circle");
   const [ActiveMiddle, setActiveMiddle] = useState("circle");
@@ -65,17 +57,13 @@ export function Resquest({
   return(
     <Container>
       <Header>
-        <MiniHeader>
-          <Icon name="chevron-left" />
-        </MiniHeader>
+        <ReturnSignInButton name={"chevron-left"}/>
       </Header>
       <ImageCentralizer>
         <PizzaImage source={require('../../../assets/margherita.png')} />
       </ImageCentralizer>
       <TitleBlock>
-        <Title>
-          Margherita
-        </Title>
+        <Title>Margherita</Title>
       </TitleBlock>
       <Textarea>
         <SubText>Selecione um tamanho</SubText>
@@ -105,18 +93,18 @@ export function Resquest({
         <TextConfirm>Quantidade</TextConfirm>
       </TextConfirmBody>
       <RequestFooter>
-        <InputSignIn 
+        <Input 
           type="request"  
           placeholder="1"  
         />
-        <InputSignIn 
+        <Input 
           type="request"  
           placeholder="1"  
         />
       </RequestFooter>
       <Footer>
         <TotalPrice>Total: R$ 10,00</TotalPrice>
-        <ButtonSignIn type='request' title="Confirmar Pedido"/>
+        <Button type='request' title="Confirmar Pedido"/>
       </Footer>
     </Container>
   )

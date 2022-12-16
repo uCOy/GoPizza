@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacityProps } from 'react-native';
+import { useNavigation } from "@react-navigation/native";
 
 import { 
   Container,
@@ -11,9 +12,12 @@ interface Props extends TouchableOpacityProps{
   type: 'login' | 'request';
 }
 
-export function ButtonSignIn({type, title, ...rest}:Props) {
+export function Button({type, title, ...rest}:Props) {
+
+  const navigation = useNavigation();
+
   return (
-    <Container type={type} {...rest}>
+    <Container type={type} {...rest} onPress={() => navigation.navigate("Request")}>
       <Title>
         {title}
       </Title>
